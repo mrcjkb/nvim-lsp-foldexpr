@@ -5,6 +5,8 @@ It adds experimental LSP support for [`textDocument/foldingRange`](https://learn
 
 > :warning: The implementation of neovim/#14306 will likely change by the time it is merged.
 > *Use this plugin at your own risk!*
+>
+> For a more feature-rich plugin, consider [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) instead.
 
 ## Installation
 
