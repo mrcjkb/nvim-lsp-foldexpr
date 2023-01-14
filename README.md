@@ -12,7 +12,7 @@ e.g. using [`packer.nvim`](https://github.com/wbthomason/packer.nvim):
 
 ```lua
 use {
-  'MrcJkb/nvim-lsp-foldexpr',
+  'mrcjkb/nvim-lsp-foldexpr',
   config = function()
     require('lsp-foldexpr').setup()
   end,
