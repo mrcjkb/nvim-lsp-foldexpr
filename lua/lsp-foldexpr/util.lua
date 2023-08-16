@@ -24,14 +24,13 @@ do
     end
 
     for linenr, level in pairs(endlevels) do
-      foldlevels[bufnr][linenr] = '<' .. level
+      foldlevels[bufnr][linenr] = "<" .. level
     end
 
     -- Force refresh by setting folding options
     for _, winid in ipairs(vim.fn.win_findbuf(bufnr)) do
-      vim.api.nvim_win_set_option(winid, 'foldexpr',
-        "luaeval('vim.lsp.buf.foldexpr('..v:lnum..')')")
-      vim.api.nvim_win_set_option(winid, 'foldmethod', "expr")
+      vim.api.nvim_win_set_option(winid, "foldexpr", "luaeval('vim.lsp.buf.foldexpr('..v:lnum..')')")
+      vim.api.nvim_win_set_option(winid, "foldmethod", "expr")
     end
   end
 
@@ -40,7 +39,9 @@ do
   --@param linenr line number (1-indexed)
   --@returns fold level
   function M.get_fold_level(bufnr, linenr)
-    if not foldlevels[bufnr] then return 0 end
+    if not foldlevels[bufnr] then
+      return 0
+    end
     return foldlevels[bufnr][linenr]
   end
 end
