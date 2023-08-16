@@ -10,13 +10,21 @@ It adds experimental LSP support for [`textDocument/foldingRange`](https://learn
 
 ## Installation
 
-e.g. using [`packer.nvim`](https://github.com/wbthomason/packer.nvim):
+e.g. using [`lazy.nvim`](https://github.com/folke/lazy.nvim):
 
 ```lua
-use {
+{
   'mrcjkb/nvim-lsp-foldexpr',
-  config = function()
-    require('lsp-foldexpr').setup()
-  end,
+  lazy = false,
 }
+```
+
+This plugin **does not** support lazy loading.
+
+## Usage
+
+To enable LSP-based folding, put the following in your `ftplugin` or `FileType` autocommand:
+
+```lua
+vim.wo.foldexpr = 'v:lua.vim.lsp.buf.foldexpr()'
 ```
